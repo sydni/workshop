@@ -1,5 +1,5 @@
-# Workshop 
-![]() 
+# A Workshop on
+![](https://cdn.rawgit.com/ahsanazim/workshop/master/img/react-native-logo.svg) 
 
 
 ## Setting up the environment & basic init: 
