@@ -344,6 +344,50 @@ class HelloWorld extends Component {
   }
 }
 ```
+
+That was cool, but it's really only the bare bones of navigation - all you have is an initial page. Let's get some actual navigation in to the mix. 
+
+Before we get it to navigate, we need something to navigate *to*. 
+
+:rotating_light: Create a new js file in the `GoingNative` directory, call it anything you like - we chose the highly creative `AnotherPage.js`. Create an identically named class inside it, with the appropriate imports, and some filler content. This should be straightforward. We ended up with this: 
+
+```javascript 
+import React, { Component } from 'react';
+import { AppRegistry, Text, StyleSheet, NavigatorIOS } from 'react-native';
+
+
+class AnotherPage extends Component {
+  render() {
+    return (
+      <Text style={styles.textContainer}>
+        This is some filler text to telling you that youve
+        navigated to another page.
+      </Text>
+    );
+  }
+}
+
+// note the flexbox!
+const styles = StyleSheet.create({
+  textContainer: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    color: 'green',
+  },
+});
+
+
+export default AnotherPage
+
+```
+
+Now you have to link this page to the HelloWorld page. There are a few ways to do this - you can make the familiar blue arrows on the nav bar, or make something else on the page clickable such that it takes you to another page.
+
+We'll do the latter, since it feels trivially cooler than the blue arrows ;) 
+
+To do this, you'll have to  
  
 
 
