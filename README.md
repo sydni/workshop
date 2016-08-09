@@ -1,6 +1,24 @@
-# A Workshop on
+# Workshop
+
+
 ![](https://cdn.rawgit.com/ahsanazim/workshop/master/img/react-native-logo.svg) 
 
+Today we'll be introducing you to React Native, taking you from a basic-app to one that does all sorts of amazing things. We'll also leave you with all sorts of goodies and things to keep in mind if you plan on pursuing React Native development in the future. 
+
+Since this doc is kind of long, here's a short run down on what you'll find below: 
+
+1. [Setting up the environment & basic init](#Setting-up the-environment-&-basic-init)
+2. [Building a cool React Native App]
+3. [For future reference]:
+	- workflow
+	- debugging
+	- Add-ons
+4. [Final note on why you should use React native]
+5. [Recommended Readings](#recommended-readings)
+
+
+
+Let's get started!
 
 ## Setting up the environment & basic init: 
 
@@ -132,7 +150,7 @@ and
 
 
 
-## Recommended React Native readings 
+## Recommended readings 
 
 - the definitive react-native intro course: `https://egghead.io/courses/react-native-fundamentals`
 - the official react-native docs (a little bit of rtfm goes a long way): `https://facebook.github.io/react-native/docs/getting-started.html`
