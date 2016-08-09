@@ -90,9 +90,11 @@ Just create a class `GoingNative` that extends `Component` (familiar, is it not?
 
 You'll need to return something in the render, though, right? The text "Hello World!" would seem a like a good idea, but we need something to put it in - maybe a div? 
 
-Wrong. That won't work in React Native; instead, you'll wrap your `Hello World!` inside starting (`<Text>`) and ending (`</Text>`) tags. 
+Wrong. That won't work in React Native; instead, you'll wrap your `Hello World!` inside a starting (`<Text>`) and ending (`</Text>`) UI component called Text. This brings us to an aside on *Native UI Components* in general - they're best understood as native UI widgets, necessary and crucial in facilitating making stuff appear and interact on your page in proper ways. Clearly, the `<Text>` component is for displaying text. You have a corresponding `<Image>` component for images, and more complex ones for things such as maps (the`<MapView>` component!). Just as we'd been using components in our React code, think of these as analagous to them in React Native, except for the fact that they're *native* to it. 
 
-:rotating_light: Your class should end up looking like this: 
+Btw, in case there's any confusion: you can define normal components in React Native as well, and import/export/use them just as we did in React. In fact, our `GoingNative` class is a component in itself, and can be used accordingly. The above was just to emphasise the use of native UI components in React Native.
+
+:rotating_light: With the above addition, your class hopefully ends up looking like this: 
 
 ```javascript
 class GoingNative extends Component {
@@ -103,25 +105,92 @@ class GoingNative extends Component {
   }
 }
 ```
+Are we going to see stuff pop up yet? Nope - the final step before we see vaunted Hello World message is *registering* our app. 
 
-Simple enough! One thing though - when you run it, you'll see that your Hello World! message is obscured by the carrier info. Just to make clear that our Hello World message really did work, why not add a newline in front of the `Hello World!` text. Take care of JSX syntax though! 
+Fortunately, this kind of registration doesn't involve any bureacracy or paperwork - you just make a call to the `registerComponent()` function, passing in the name of the class, and an anonymous function that simply gets the component (the latter parameter is literally called `getComponentFunc`). 
+
+:rotating_light: Like so: 
+
+```javascript
+AppRegistry.registerComponent('GoingNative', () => GoingNative);
+```
+
+One think to keep in mind is that however large your app will be, you'll usually have only one `AppRegistry.registerComponent( ... )` call; its function is to designate the root of your app. A crucial bit of boilerplate! 
+
+Finally done! Go and reload (`Cmd-R`) the simulator (if you've still got it running), or do `react-native run-ios` from the command line if you haven't.
+
+Simple enough, right! One thing though - you'll notice that your Hello World! message is obscured by the carrier info. Just to make clear that our Hello World message really did work, why not add a newline in front of the `Hello World!` text. Take care of JSX syntax though! 
 
 :rotating_light: Although this is just for aesthetics, you can basically switch out `<Text>Hello world!</Text>` for `<Text>{"\n"}Hello world!</Text>`. 
 
-Now you'll see the Hello World message appear within clear view! 
+`Cmd-R` and you'll now see the Hello World message appear within clear view! 
 
-Nice job ;) 
+:rotating_light: There you have it - a simple React Native Hello World App. If you look over the overall code, it's miniscule: 
 
+```javascript 
+import React, { Component } from 'react';
+import { AppRegistry, Text } from 'react-native';
 
+class GoingNative extends Component {
+  render() {
+    return (
+      <Text>{"\n"}Hello world!</Text>
+    );
+  }
+}
 
+AppRegistry.registerComponent('GoingNative', () => GoingNative);
+```
 
+All we really did was create a `GoingNative` component and register it with our app. The component contains text, "Hello World!", and that's what appears on our screen.
 
 *that line was blatantly stolen from facebook's react-native page (it was just too good to pass up). Apologies to facebook.
 
+### Styling
 
-## heyyyy
-Fear not, we'll get to that in a bit. First, though, let's have a look at what exactly the code is doing overall. At a high level, all that's happening in this file is that we're creating a new component called `GoingNative`, and *registering* it with our app (using `AppRegistry` at the bottom of our file). However large your app will be, you'll have only one `AppRegistry.registerComponent( ... )` command its function is to designate the root of your app. 
- 
+Before we move on and develop another app, let's take a moment to talk about something we pointed out in the starter app - styling in React Native. 
+
+A few basic things to keep in mind about styling in React Native:
+
+-  styling is done via javascript, in a syntax usually identical to CSS (with certain exceptions - e.g. names are written like `backgroundColor` instead of like `background-color`)
+
+- all core components (e.g. `<Text>` from above) accept a prop named `style`. The prop is usually a simple javascript object. This clearly encourages us to pass in a style object, and thus through it choose which style to apply to which component (although note that inline styles are possible). 
+
+- Usually, several styles are defined at once - for this, use the `StyleSheet.create(...)` function, instead of nesting a plain javascript object. 
+
+Now, let's style our `Hello World!` app. 
+
+Let's start of with some very, very basic styling - changing the color of our text to red.
+
+We'll make use of the `style` prop here: simply pass in an object that has style rule(s) - defined in CSS syntax - to change text color to red.
+
+You could have done this multiple ways, but in the end you should end up with one of the following:  
+
+
+```javascript 
+
+// inline style - NOT RECOMMENDED
+
+// in its usual place
+<Text style={{color: 'red'}}>{"\n"}Hello world!</Text>
+
+
+######################### OR ################################
+
+// Passing in an object
+
+// in its usual place
+<Text style={redStyle}>{"\n"}Hello world!</Text>
+
+// after class definition but before registering app ...
+const redStyle = {
+  color: 'red'
+}
+
+```
+
+
+
 
 ## :boom: For future reference: 
 
@@ -138,8 +207,7 @@ Similar to the hot-reloading* we've been using in developing our web apps, react
 That, in short, is a possible -- and decent, in our opinion :) --  react-native workflow! You'll be typing code into Atom, clicking save, and seeing the changes pop-up lightning fast in your simulator. Also take note that you'll keep the *React Package Manager* terminal window open in the background. 
 
 
-
-*yes, we haven't *quite* been using actual, full-spec hot-reloading. In this app you will though! As an aside, we highly recommend reading up on just why hot reloading is different from the usual reloading upon saving - it's really cool! Refer to the recommended readings section for more info.
+*yes, we haven't quite been using actual, full-spec hot-reloading. In this React Native you can/will though! As an aside, we highly recommend reading up on just why hot reloading is different from the usual reloading upon saving - it's really cool! Refer to the recommended readings section for more info.
 
 
 ### debugging with React Native
