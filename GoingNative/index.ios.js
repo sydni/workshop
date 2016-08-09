@@ -9,7 +9,7 @@ class GoingNative extends Component {
           component: HelloWorld,
           title: 'Some hello world messages',
         }}
-        style={{flex: 1}}
+        style={styles.mainContainer}
       />
     );
   }
@@ -18,7 +18,7 @@ class GoingNative extends Component {
 class HelloWorld extends Component {
   render() {
     return (
-      <View>
+      <View style={styles.viewContainer}>
         <Text style={styles.red}>{"\n"}Hello world!</Text>
         <Text style={styles.bigblue}>Hey there</Text>
         <Text style={[styles.bigblue, styles.red]}>Its a great day</Text>
@@ -29,6 +29,15 @@ class HelloWorld extends Component {
 }
 
 const styles = StyleSheet.create({
+  mainContainer: {
+    flex: 1,
+  },
+  viewContainer: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   bigblue: {
     color: 'blue',
     fontWeight: 'bold',
