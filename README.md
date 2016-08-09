@@ -1,21 +1,27 @@
-# Workshop
-
+# Getting started with 
 
 ![](https://cdn.rawgit.com/ahsanazim/workshop/master/img/react-native-logo.svg) 
 
-Today we'll be introducing you to React Native, taking you from a basic-app to one that does all sorts of amazing things. We'll also leave you with all sorts of goodies and things to keep in mind if you plan on pursuing React Native development in the future. 
+Today we'll be introducing you to React Native, taking you from building a basic-app to whipping up one that does all sorts of amazing things. We'll also leave you with all sorts of goodies and things to keep in mind if you plan on pursuing React Native development in the future. 
 
-Since this doc is kind of long, here's a short run down on what you'll find below: 
+Basically, this'll be your one-stop-shop to becoming an ace React Native developer ;) 
+
+Since this document is slightly long, here's a short run down on what you'll find inside: 
 
 1. [Setting up the environment & basic init](#setting-up-the-environment-basic-init)
-2. [Building a cool React Native App](#lets-build-a-few-react-native-apps)
-3. [For future reference](#for-future-reference):
+2. [Building a few React Native Apps](#lets-build-a-few-react-native-apps)
+   - easy peasy lemon squeezy
+   - not that easy
+   - kinda hard 
+3. [For future reference](#for-future-reference)
 	- workflow
 	- debugging
-	- Add-ons
+
+4. [Add-Ons to your dev environment](#add-ons-to-your-react-native-dev-environment)
+   - upgrading Atom
+   - need a starter kit?
 4. [Final note on why you should use React native](#two-final-points-on-why-react-native-is-totally-worth-your-time)
 5. [Recommended Readings](#recommended-readings)
-
 
 
 Let's get started!
@@ -45,15 +51,26 @@ You should now have a directory titled "AwesomeProject", with contents as follow
 
 ### run!
 
-Now type `react-native run-ios` to see your basic app run in an iOS simulator!
+Now type `react-native run-ios` in to the terminal to see your basic app run in an iOS simulator!
 
 You'll also now see another terminal window titled "React Packager" open. It'll instruct you to keep it open while you're developing any javascript projects - please follow said advice!
 
-## let's build a few React Native apps: 
+## let's build a few React Native apps:
+
+### basic
+
+How about we begin with an insanely simple app - something so straightforward you won't even have to break a sweat. Not only will you not have to write a single line of code, the app is sitting right there, in front of you! 
+
+Yup, if you want a really simple app, then look no further than what you saw upon typing `react-native run-ios` in to the terminal for the first time. 
+
+Simple though the app may be, it does present a nice oppurtunity to have a look at some basic React Native code.
+
+Open up the app's code in Atom (type `Atom .` in to the terminal while in the `GoingNative` directory).   
+ 
 
 ## For future reference: 
 
-### a note on react-native workflow 
+### a note on React Native workflow 
 
 While most conventional iOS apps are developed exclusively through Xcode, and tested there as well, you'll probably want to take a different approach with react-native - unless, that is, you're in the truly infinitesimal minority that enjoys coding javascript in Xcode.
 
@@ -70,7 +87,7 @@ That, in short, is a possible -- and decent, in our opinion :) --  react-native 
 *yes, we haven't *quite* been using actual, full-spec hot-reloading. In this app you will though! As an aside, we highly recommend reading up on just why hot reloading is different from the usual reloading upon saving - it's really cool! Refer to the recommended readings section for more info.
 
 
-### react-native debugging
+### debugging with React Native
 
 You have a few options here, all of which thankfully avoid using Xcode's fairly off-putting debugger ;) Most are covered well at this (https://facebook.github.io/react-native/docs/debugging.html) link, but we'll provide a brief rundown: 
 
@@ -80,7 +97,7 @@ You have a few options here, all of which thankfully avoid using Xcode's fairly 
   - `react-native log-ios` / `react-native log-android` from terminal 
   - `Debug → Open System Log...` in the iOS Simulator
 
-## Optional add-ons to your react-native development environment:
+## Optional add-ons to your React Native dev environment:
 
 ### Nuclide
 
@@ -162,3 +179,5 @@ and
 - `https://medium.com/@ilanasufrin/tips-and-tricks-for-working-with-react-native-8ed6b6a82243#.60sd6norv`
 - `https://medium.com/the-react-native-log/tips-for-styling-your-react-native-apps-3f61608655eb#.a05iru4gz`
 - for hot reloading read the first answer's hot-reloading relevent portion from this link: `https://forums.meteor.com/t/what-is-hot-reloading-and-code-splitting-webpack-webpack-vs-ecmascript-hot/19734`
+
+
