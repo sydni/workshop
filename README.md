@@ -8,19 +8,19 @@ Basically, this'll be your one-stop-shop to becoming an ace React Native develop
 
 Since this document is slightly long, here's a short run down on what you'll find inside: 
 
-1. [Setting up the environment & basic init](#setting-up-the-environment-basic-init)
-2. [Building a few React Native Apps](#lets-build-a-few-react-native-apps)
-   - easy peasy lemon squeezy
-   - not that easy
-   - kinda hard 
-3. [For future reference](#for-future-reference)
+1. [Setting up the environment & basic init](#boom-setting-up-the-environment-basic-init)
+2. [Building a few React Native Apps](#boom-lets-build-a-few-react-native-apps)
+   - hello world!
+   - a pretty simple app
+   - a not-that-simple app
+3. [For future reference](#boom-for-future-reference)
 	- workflow
 	- debugging
 
-4. [Add-Ons to your dev environment](#optional-add-ons-to-your-react-native-dev-environment)
+4. [Add-Ons to your dev environment](#boom-optional-add-ons-to-your-react-native-dev-environment)
    - upgrading Atom
    - need a starter kit?
-4. [Final note on why you should use React native](#two-final-points-on-why-react-native-is-totally-worth-your-time)
+4. [Final note on why you should use React native](#boom-two-final-points-on-why-react-native-is-totally-worth-your-time)
 5. [Recommended Readings](#recommended-readings)
 
 
@@ -58,20 +58,68 @@ You'll also now see another terminal window titled `React Packager` open. It'll 
 
 ## :boom: let's build a few React Native apps:
 
-### basic
+### a bit of cleaning up
 
-How about we begin with an insanely simple app - something so straightforward you won't even have to break a sweat. Not only will you not have to write a single line of code, the app is even sitting right there, in front of you! 
+Before we begin coding up a few apps, let's firstly get rid of the default 'app' that the React Native folks have left in for us. Through the terminal,`cd` to the `GoingNative` directory, and type `Atom .`
 
-Yup, if you want a truly simple app, then look no further than what you saw upon typing `react-native run-ios` into the terminal for the first time. 
+Once in Atom, go to the `index.ios.js` file; this is the js file that produced the page you saw when running `react-native run-ios` for the first time. Go ahead and take a peek - there's no harm in having a quick look at it :). 
 
-Primitive though the app may be, it does present a nice oppurtunity to have a look at some basic React Native code.
+If you do so, then your first impression of the code will probably be one of relief - it looks remarkably similar to the usual React we've been used to. As you now know, that's intentional, and pretty much the whole point of React Native! 
 
-Open up the app's code in Atom (type `Atom .` in to the terminal while in the `GoingNative` directory).  
+Indeed, it's all there: the familiar `import` statements, `render` calls,`ES6 classes`, as well as the `JSX` we've been dealing with for quite a while. You have, though, probably noticed something that's familiar, but seemingly in the wrong place (`CSS` in the same file as `javascript`????? oh the horror :astonished: ).
 
-Your first impression of the code will probably be one of relief - it looks remarkably similar to the usual React we've been used to. As you now know, that's intentional, and pretty much the whole point of React Native! 
+Fear not, we'll get to that in a bit. First, though, :rotating_light: **clear the page**. We want a blank `index.ios.js` file to work off of. No cheating here ;)
 
-Indeed, it's all there: the familiar `import` statements and `ES6 classes`, as well as the `JSX` we've been dealing with for quite a while. You have, though, probably noticed something that's familiar, but seemingly in the wrong place (CSS in the same file as javascript????? oh the horror :astonished: ).
+### Hello World!
 
+In accordance with the ancient traditions of our people, we must first build an app that does nothing except say "Hello world".*
+
+Here's how you'd do so: 
+
+First, you'll need to import a few things - namely `React`,`Component`,`Text`, and `AppRegistry`. Two of the previous four items should catch your eye - we've been importing `React` and `Component` an untold number of times over the past few weeks. `Text` and `AppRegistry` are, well, native to React Native, so we'll talk about them in a bit. 
+
+:rotating_light: Basically, the following goes at the top of your file: 
+
+```javascript
+import React, { Component } from 'react';
+import { AppRegistry, Text } from 'react-native';
+```
+Now, if we were doing vanilla react, and all we wanted to display was a 'hello world' message, we'd probably put that in a render function inside a component, right? Same here. 
+
+Just create a class `GoingNative` that extends `Component` (familiar, is it not?), and put in the usual `render` call inside it. Same style and syntax as vanilla React.
+
+You'll need to return something in the render, though, right? The text "Hello World!" would seem a like a good idea, but we need something to put it in - maybe a div? 
+
+Wrong. That won't work in React Native; instead, you'll wrap your `Hello World!` inside starting (`<Text>`) and ending (`</Text>`) tags. 
+
+:rotating_light: Your class should end up looking like this: 
+
+```javascript
+class GoingNative extends Component {
+  render() {
+    return (
+      <Text>Hello world!</Text>
+    );
+  }
+}
+```
+
+Simple enough! One thing though - when you run it, you'll see that your Hello World! message is obscured by the carrier info. Just to make clear that our Hello World message really did work, why not add a newline in front of the `Hello World!` text. Take care of JSX syntax though! 
+
+:rotating_light: Although this is just for aesthetics, you can basically switch out `<Text>Hello world!</Text>` for `<Text>{"\n"}Hello world!</Text>`. 
+
+Now you'll see the Hello World message appear within clear view! 
+
+Nice job ;) 
+
+
+
+
+
+*that line was blatantly stolen from facebook's react-native page (it was just too good to pass up). Apologies to facebook.
+
+
+## heyyyy
 Fear not, we'll get to that in a bit. First, though, let's have a look at what exactly the code is doing overall. At a high level, all that's happening in this file is that we're creating a new component called `GoingNative`, and *registering* it with our app (using `AppRegistry` at the bottom of our file). However large your app will be, you'll have only one `AppRegistry.registerComponent( ... )` command its function is to designate the root of your app. 
  
 
