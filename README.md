@@ -313,7 +313,37 @@ To use it, we should take note that the `NavigatorIOS` component has an `initial
 
 A `route` object is simply a javascript object with `component` and `title` properties. `component` is the name of the component that should show up initially, and `title` will be the text that shows up in the navigation bar at the top of the screen. 
 
-Right now, let's simply keep our Hello World! messages as the initial route, and have our app show that on startup. This'll also be a nice oppurtunity to refactor a bit - move the `Hello World!` message and assorted text components to a separate class (in the same file for now), that 
+Right now, let's simply keep our Hello World! messages as the initial route, and have our app show that on startup. This'll also be a nice oppurtunity to refactor a bit - move the `Hello World!` message and assorted text components to a separate class (in the same file for now), call it anything you like (except for `GoingNative`, of course - you're keeping that class). Then you empty out the `GoingNative` class, and all you'll have the render function return is a `<NavigatorIOS .. />` component with the appropriate prop values passed in. 
+
+Also, maybe add a bit of flexbox styling - this should be pretty straightforward by now.
+
+:rotating_light: We ended up with something like this:  
+
+```javascript 
+
+// render function in GoingNative returns this now. Note mention of HelloWorld class. 
+  <NavigatorIOS
+    initialRoute={{
+      component: HelloWorld,
+      title: 'Some hello world messages',
+    }}
+    style={styles.mainContainer}
+  />
+
+// refactored HelloWorld class, also added styling to View component
+class HelloWorld extends Component {
+  render() {
+    return (
+      <View style={styles.viewContainer}>
+        <Text style={styles.red}>{"\n"}Hello world!</Text>
+        <Text style={styles.bigblue}>Hey there</Text>
+        <Text style={[styles.bigblue, styles.red]}>Its a great day</Text>
+        <Text style={[styles.red, styles.bigblue]}>truly great</Text>
+      </View>
+    )
+  }
+}
+```
  
 
 
