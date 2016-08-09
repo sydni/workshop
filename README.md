@@ -1,5 +1,6 @@
 # Getting started with 
 
+
 ![](https://cdn.rawgit.com/ahsanazim/workshop/master/img/react-native-logo.svg) 
 
 Today we'll be introducing you to React Native, taking you from building a basic-app to whipping up one that does all sorts of amazing things. We'll also leave you with a tonne of goodies and things to keep in mind if you plan on pursuing React Native development in the future. 
@@ -10,8 +11,8 @@ Since this document is slightly long, here's a short run down on what you'll fin
 
 1. [Setting up the environment & basic init](#boom-setting-up-the-environment-basic-init)
 2. [Building a few React Native Apps](#boom-lets-build-a-few-react-native-apps)
-   - hello world!
-   - a pretty simple app
+   - Hello World!
+   - Styling + improved Hello World!
    - a not-that-simple app
 3. [For future reference](#boom-for-future-reference)
 	- workflow
@@ -270,8 +271,6 @@ Then you can access your these style rules via `styles.large`, `styles.small`, a
 
 For our little app, do something similar! 
 
-As an example, consider the styles defined below, and their corresponding uses to style our components:
-
 :rotating_light: As an example, consider the styles defined below, and their corresponding uses to style our components:
 
 ```javascript 
@@ -299,6 +298,14 @@ const styles = StyleSheet.create({
 Pretty simple throughout ^ ! Do take note, though, of the 3rd and 4th `<Text>` components, where I passed styles through via an array. It's useful to understand which style gets applied, and which doesn't, and why.
 
 There's a lot more to styling, but this should be enough for you guys to extrapolate from. The main issue with styling really is just understanding where it goes, plus the use of native UI components in appropriate situations. We've covered both, so you should be in good stead! 
+
+### a better app 
+
+Now that we've covered the basics, let's move on to something more involved, making use not only of the React Native info you've gained today, but also all you've learned about React over the course of the term. 
+
+We're not going to be stopping as often now, so fasten your seatbelts! Remember that most of what you've learnt about React applies here too, and also keep in mind the usability of native UI components! Have a look at the [API docs](https://facebook.github.io/react-native/docs/getting-started.html) when you're confused over what to use. 
+
+Our goal here is to make a 
 
 
 
