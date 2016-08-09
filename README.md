@@ -243,10 +243,62 @@ Let's get started with `StyleSheet.create(...)`!
 ```javascript 
 import { AppRegistry, Text, View, StyleSheet } from 'react-native';
 ```
+Now to actually using it: 
 
+Think of the function as essentially producing a stylesheet - similar to those present in CSS. It also has many other benefits, as mentioned in its section in the [API docs](https://facebook.github.io/react-native/docs/stylesheet.html). 
 
+Say you have a set of possible styles - e.g. large, small, wide, long - that you want to make available through a single `styles` variable: you'd do the following: 
 
+```javascript 
+const styles = StyleSheet.create({
+  large: {
+	// CSS rules
+  },
+  small: {
+	// CSS rules
+  },
+  wide: {
+	// CSS rules
+  },
+  long: {
+	// CSS rules
+  },
+});
+```
 
+Then you can access your these style rules via `styles.large`, `styles.small`, and so on. 
+
+For our little app, do something similar! 
+
+As an example, consider the styles defined below, and their corresponding uses to style our components:
+
+:rotating_light: As an example, consider the styles defined below, and their corresponding uses to style our components:
+
+```javascript 
+
+// in render func
+<View>
+  <Text style={styles.red}>{"\n"}Hello world!</Text>
+  <Text style={styles.bigblue}>Hey there</Text>
+  <Text style={[styles.bigblue, styles.red]}>Its a great day</Text>
+  <Text style={[styles.red, styles.bigblue]}>truly great</Text>
+</View>
+
+// you know where this goes ..
+const styles = StyleSheet.create({
+  bigblue: {
+    color: 'blue',
+    fontWeight: 'bold',		
+    fontSize: 30,
+  },
+  red: {
+    color: 'red',
+  },
+});
+```
+Pretty simple throughout ^ ! Do take note, though, of the 3rd and 4th `<Text>` components, where I passed styles through via an array. It's useful to understand which style gets applied, and which doesn't, and why.
+
+There's a lot more to styling, but this should be enough for you guys to extrapolate from. The main issue with styling really is just understanding where it goes, plus the use of native UI components in appropriate situations. We've covered both, so you should be in good stead! 
 
 
 
