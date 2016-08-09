@@ -7,20 +7,20 @@ Today we'll be introducing you to React Native, taking you from a basic-app to o
 
 Since this doc is kind of long, here's a short run down on what you'll find below: 
 
-1. [Setting up the environment & basic init](#setting-up-the-environment-&-basic-init)
+1. [Setting up the environment & basic init](#setting-up-the-environment-and-basic-init)
 2. [Building a cool React Native App](#let's-build-a-few-react-native-apps)
 3. [For future reference](#for-future-reference):
 	- workflow
 	- debugging
 	- Add-ons
-4. [Final note on why you should use React native](#Two-final-points-on-why-react-native-is-totally-worth-your-time)
+4. [Final note on why you should use React native](#two-final-points-on-why-react-native-is-totally-worth-your-time)
 5. [Recommended Readings](#recommended-readings)
 
 
 
 Let's get started!
 
-## Setting up the environment & basic init: 
+## Setting up the environment and basic init: 
 
 ### overall requirements: 
 
