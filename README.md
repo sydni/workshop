@@ -121,7 +121,17 @@ Finally done! Go and reload (`Cmd-R`) the simulator (if you've still got it runn
 
 Simple enough, right! One thing though - you'll notice that your Hello World! message is obscured by the carrier info. Just to make clear that our Hello World message really did work, why not add a newline in front of the `Hello World!` text. Take care of JSX syntax though! 
 
-:rotating_light: Although this is just for aesthetics, you can basically switch out `<Text>Hello world!</Text>` for `<Text>{"\n"}Hello world!</Text>`. 
+:rotating_light: Although this is just for aesthetics, you can basically switch out 
+
+```javascript
+<Text>Hello world!</Text>
+```
+ 
+for  
+
+```javascript
+<Text>{"\n"}Hello world!</Text>
+```
 
 `Cmd-R` and you'll now see the Hello World message appear within clear view! 
 
@@ -146,7 +156,7 @@ All we really did was create a `GoingNative` component and register it with our 
 
 *that line was blatantly stolen from facebook's react-native page (it was just too good to pass up). Apologies to facebook.
 
-### Styling
+### Styling (and some other stuff . . . )
 
 Before we move on and develop another app, let's take a moment to talk about something we pointed out in the starter app - styling in React Native. 
 
@@ -156,6 +166,8 @@ A few basic things to keep in mind about styling in React Native:
 
 - all core components (e.g. `<Text>` from above) accept a prop named `style`. The prop is usually a simple javascript object. This clearly encourages us to pass in a style object, and thus through it choose which style to apply to which component (although note that inline styles are possible). 
 
+- It is possible to pass in array of styles - the last style in the array has precedence (can help in inheritance of styles).
+
 - Usually, several styles are defined at once - for this, use the `StyleSheet.create(...)` function, instead of nesting a plain javascript object. 
 
 Now, let's style our `Hello World!` app. 
@@ -164,7 +176,7 @@ Let's start of with some very, very basic styling - changing the color of our te
 
 We'll make use of the `style` prop here: simply pass in an object that has style rule(s) - defined in CSS syntax - to change text color to red.
 
-You could have done this multiple ways, but in the end you should end up with one of the following:  
+:rotating_light: You could have done this multiple ways, but in the end you should end up with one of the following:  
 
 
 ```javascript 
@@ -177,7 +189,7 @@ You could have done this multiple ways, but in the end you should end up with on
 
 ######################### OR ################################
 
-// Passing in an object
+// Passing in an object - RECOMMENDED
 
 // in its usual place
 <Text style={redStyle}>{"\n"}Hello world!</Text>
@@ -188,6 +200,52 @@ const redStyle = {
 }
 
 ```
+
+Having done that, let's now have a go at defining multiple styles - a clear chance to test out the `StyleSheet.create(...)` function. 
+
+First, though, let's take a step back - what use is it adding multiple styles if we have only one item to act on? Better to add some more text, and test out different styles on different items of text, right?
+
+You could keep adding text to the current `<Text>` component, but since we want separate styles for separate chunks of text, it'd be easier to add more `<Text>` components to the mix. Add a few, and put whatever you want in them. 
+
+Most of you will have already appreciated the need for some sort of container for the `<Text>` components we now have -- `JSX` will raise hell if we leave adjacent tags without any context.  
+
+This is a nice chance to use the `<View>` component - it's the basic building block of UI in React-Native, and supports a bunch of cool features (flexbox, touch accessibility, etc.)
+
+:rotating_light: Note that to use it, you'll have to add `View` to your list of imports from `react-native` : 
+
+```javascript 
+import { AppRegistry, Text, View } from 'react-native';
+```
+
+Now nest all of your <Text> components inside starting and ending <View> component tags. 
+
+
+:rotating_light: With those changes, your render function could be return something like this: 
+
+
+```javascript 
+<View>
+  <Text style={redStyle}>{"\n"}Hello world!</Text>
+  <Text style={redStyle}>Hey there</Text>
+  <Text style={redStyle}>Its a great day</Text>
+  <Text style={redStyle}>truly great</Text>
+</View>
+```
+
+`Cmd-R` the app and you'll see your text appear! 
+
+Note how up above i've given each of the `<Text>` components an identical style - the red text color we defined previously. Now's a chance to change that! 
+
+Let's get started with `StyleSheet.create(...)`!
+
+:rotating_light: Predictably, using the function requires you to import `StyleSheet` from `react-native`; you'll now have
+
+```javascript 
+import { AppRegistry, Text, View, StyleSheet } from 'react-native';
+```
+
+
+
 
 
 
