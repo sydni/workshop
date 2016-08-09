@@ -7,13 +7,13 @@ Today we'll be introducing you to React Native, taking you from a basic-app to o
 
 Since this doc is kind of long, here's a short run down on what you'll find below: 
 
-1. [Setting up the environment & basic init](#Setting-up the-environment-&-basic-init)
-2. [Building a cool React Native App]
-3. [For future reference]:
+1. [Setting up the environment & basic init](#setting-up-the-environment-&-basic-init)
+2. [Building a cool React Native App](#let's-build-a-few-react-native-apps)
+3. [For future reference](#for-future-reference):
 	- workflow
 	- debugging
 	- Add-ons
-4. [Final note on why you should use React native]
+4. [Final note on why you should use React native](#Two-final-points-on-why-react-native-is-totally-worth-your-time)
 5. [Recommended Readings](#recommended-readings)
 
 
@@ -49,9 +49,11 @@ Now type `react-native run-ios` to see your basic app run in an iOS simulator!
 
 You'll also now see another terminal window titled "React Packager" open. It'll instruct you to keep it open while you're developing any javascript projects - please follow said advice!
 
-## let's build a (better) react-native app: 
+## let's build a few react-native apps: 
 
-## a note on react-native workflow 
+## For future reference: 
+
+### a note on react-native workflow 
 
 While most conventional iOS apps are developed exclusively through Xcode, and tested there as well, you'll probably want to take a different approach with react-native - unless, that is, you're in the truly infinitesimal minority that enjoys coding javascript in Xcode.
 
@@ -68,7 +70,7 @@ That, in short, is a possible -- and decent, in our opinion :) --  react-native 
 *yes, we haven't *quite* been using actual, full-spec hot-reloading. In this app you will though! As an aside, we highly recommend reading up on just why hot reloading is different from the usual reloading upon saving - it's really cool! Refer to the recommended readings section for more info.
 
 
-## react-native debugging
+### react-native debugging
 
 You have a few options here, all of which thankfully avoid using Xcode's fairly off-putting debugger ;) Most are covered well at this (https://facebook.github.io/react-native/docs/debugging.html) link, but we'll provide a brief rundown: 
 
@@ -110,7 +112,7 @@ Then configure:
 
 Add each of the following to the respective sections in your `package.json` : 
 
-```
+```javascript
 {
   "plugins": [
     "react",
@@ -122,7 +124,7 @@ Add each of the following to the respective sections in your `package.json` :
 and 
 
 
-```
+```javascript
 {
   "ecmaFeatures": {
     "jsx": true
@@ -131,7 +133,7 @@ and
 ```
 and 
 
-```
+```javascript
 {
   "rules": {
     "react-native/no-unused-styles": 2,
