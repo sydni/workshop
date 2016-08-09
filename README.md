@@ -49,7 +49,7 @@ Now type `react-native run-ios` to see your basic app run in an iOS simulator!
 
 You'll also now see another terminal window titled "React Packager" open. It'll instruct you to keep it open while you're developing any javascript projects - please follow said advice!
 
-## let's build a few react-native apps: 
+## let's build a few React Native apps: 
 
 ## For future reference: 
 
@@ -144,7 +144,7 @@ and
 }
 ```
 
-## Two final points on why react-native is totally worth your time
+## Two final points on why React Native is totally worth your time
 - backed by facebook & already gained quite a bit of traction ---> won't die anytime soon
 - backed by facebook & already gained quite a bit of traction & is young ---> will definitely improve beyond belief in the near-future
 - it may just be the next big thing, and is in it's early stages (and you thought React was young!) ---> get in during the early stages & win big 
