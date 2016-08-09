@@ -1,7 +1,21 @@
 import React, { Component } from 'react';
-import { AppRegistry, Text, View, StyleSheet } from 'react-native';
+import { AppRegistry, Text, View, StyleSheet, NavigatorIOS } from 'react-native';
 
 class GoingNative extends Component {
+  render() {
+    return (
+      <NavigatorIOS
+        initialRoute={{
+          component: HelloWorld,
+          title: 'Some hello world messages',
+        }}
+        style={{flex: 1}}
+      />
+    );
+  }
+}
+
+class HelloWorld extends Component {
   render() {
     return (
       <View>
@@ -10,7 +24,7 @@ class GoingNative extends Component {
         <Text style={[styles.bigblue, styles.red]}>Its a great day</Text>
         <Text style={[styles.red, styles.bigblue]}>truly great</Text>
       </View>
-    );
+    )
   }
 }
 

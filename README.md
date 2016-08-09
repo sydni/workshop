@@ -299,13 +299,22 @@ Pretty simple throughout ^ ! Do take note, though, of the 3rd and 4th `<Text>` c
 
 There's a lot more to styling, but this should be enough for you guys to extrapolate from. The main issue with styling really is just understanding where it goes, plus the use of native UI components in appropriate situations. We've covered both, so you should be in good stead! 
 
-### a better app 
+### more imrpovements : navigation
 
-Now that we've covered the basics, let's move on to something more involved, making use not only of the React Native info you've gained today, but also all you've learned about React over the course of the term. 
+Say we want to add navigation to our app - for that we'd bring out the `NavigatorIOS` component (this component is specific to iOS - there's a cross-platform `Navigator`, but we'll stick to `NavigatorIOS` for now).
 
-We're not going to be stopping as often now, so fasten your seatbelts! Remember that most of what you've learnt about React applies here too, and also keep in mind the usability of native UI components! Have a look at the [API docs](https://facebook.github.io/react-native/docs/getting-started.html) when you're confused over what to use. 
+:rotating_light: As usual, import the component from `react-native`: 
 
-Our goal here is to make a 
+```javascript 
+import { AppRegistry, Text, View, StyleSheet, NavigatorIOS } from 'react-native';
+```
+
+To use it, we should take note that the `NavigatorIOS` component has an `initialRoute` prop (representing the initial screen your app navigates to); you'll give it a `route` object (which describes each scene that your app navigates to). 
+
+A `route` object is simply a javascript object with `component` and `title` properties. `component` is the name of the component that should show up initially, and `title` will be the text that shows up in the navigation bar at the top of the screen. 
+
+Right now, let's simply keep our Hello World! messages as the initial route, and have our app show that on startup. This'll also be a nice oppurtunity to refactor a bit - move the `Hello World!` message and assorted text components to a separate class (in the same file for now), that 
+ 
 
 
 
