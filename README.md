@@ -2,7 +2,7 @@
 
 ![](https://cdn.rawgit.com/ahsanazim/workshop/master/img/react-native-logo.svg) 
 
-Today we'll be introducing you to React Native, taking you from building a basic-app to whipping up one that does all sorts of amazing things. We'll also leave you with all sorts of goodies and things to keep in mind if you plan on pursuing React Native development in the future. 
+Today we'll be introducing you to React Native, taking you from building a basic-app to whipping up one that does all sorts of amazing things. We'll also leave you with a tonne of goodies and things to keep in mind if you plan on pursuing React Native development in the future. 
 
 Basically, this'll be your one-stop-shop to becoming an ace React Native developer ;) 
 
@@ -17,7 +17,7 @@ Since this document is slightly long, here's a short run down on what you'll fin
 	- workflow
 	- debugging
 
-4. [Add-Ons to your dev environment](#add-ons-to-your-react-native-dev-environment)
+4. [Add-Ons to your dev environment](#optional-add-ons-to-your-react-native-dev-environment)
    - upgrading Atom
    - need a starter kit?
 4. [Final note on why you should use React native](#two-final-points-on-why-react-native-is-totally-worth-your-time)
@@ -26,7 +26,7 @@ Since this document is slightly long, here's a short run down on what you'll fin
 
 Let's get started!
 
-## Setting up the environment & basic init: 
+## :boom: Setting up the environment & basic init: 
 
 ### overall requirements: 
 
@@ -42,33 +42,40 @@ assuming you have `node`, `Xcode` (available from the App Store in case you don'
 
 1. `brew install watchman` (facebook file watcher, used for rebuilding upon changes - think hot reloading)
 
-3. `npm install -g react-native-cli` (react native command line interface)
+3. `npm install -g react-native-cli` (performs a global install of the react native command line interface)
 
-4. `react-native init GoingNative` (this will take a minute; it creates a starter project named "AwesomeProject" in a directory named identically)
+4. `react-native init GoingNative` (this will take a minute; it creates a starter project called "GoingNative" in a directory named identically)
 
-You should now have a directory titled "AwesomeProject", with contents as follows: (run `tree -L 1 -I README.md`) 
-***INSERT IMAGE***
+Your directory tree should now look as follows (note that the - rather irrelevant -`img` directory is deliberately not shown in the below image): 
+
+![]()
 
 ### run!
 
-Now type `react-native run-ios` in to the terminal to see your basic app run in an iOS simulator!
+Now `cd` in to the `GoingNative` directory and type `react-native run-ios` in to the terminal to see a starter app/window run in an iOS simulator! Btw, it'll take a few seconds to open up for the first time - the simulator will stay on 'Loading from localhost:' for a bit.
 
-You'll also now see another terminal window titled "React Packager" open. It'll instruct you to keep it open while you're developing any javascript projects - please follow said advice!
+You'll also now see another terminal window titled `React Packager` open. It'll instruct you to keep it open while you're developing the app - please follow said advice!
 
-## let's build a few React Native apps:
+## :boom: let's build a few React Native apps:
 
 ### basic
 
-How about we begin with an insanely simple app - something so straightforward you won't even have to break a sweat. Not only will you not have to write a single line of code, the app is sitting right there, in front of you! 
+How about we begin with an insanely simple app - something so straightforward you won't even have to break a sweat. Not only will you not have to write a single line of code, the app is even sitting right there, in front of you! 
 
-Yup, if you want a really simple app, then look no further than what you saw upon typing `react-native run-ios` in to the terminal for the first time. 
+Yup, if you want a truly simple app, then look no further than what you saw upon typing `react-native run-ios` into the terminal for the first time. 
 
-Simple though the app may be, it does present a nice oppurtunity to have a look at some basic React Native code.
+Primitive though the app may be, it does present a nice oppurtunity to have a look at some basic React Native code.
 
-Open up the app's code in Atom (type `Atom .` in to the terminal while in the `GoingNative` directory).   
+Open up the app's code in Atom (type `Atom .` in to the terminal while in the `GoingNative` directory).  
+
+Your first impression of the code will probably be one of relief - it looks remarkably similar to the usual React we've been used to. As you now know, that's intentional, and pretty much the whole point of React Native! 
+
+Indeed, it's all there: the familiar `import` statements and `ES6 classes`, as well as the `JSX` we've been dealing with for quite a while. You have, though, probably noticed something that's familiar, but seemingly in the wrong place (CSS in the same file as javascript????? oh the horror :astonished: ).
+
+Fear not, we'll get to that in a bit. First, though, let's have a look at what exactly the code is doing overall. At a high level, all that's happening in this file is that we're creating a new component called `GoingNative`, and *registering* it with our app (using `AppRegistry` at the bottom of our file). However large your app will be, you'll have only one `AppRegistry.registerComponent( ... )` command its function is to designate the root of your app. 
  
 
-## For future reference: 
+## :boom: For future reference: 
 
 ### a note on React Native workflow 
 
@@ -97,7 +104,7 @@ You have a few options here, all of which thankfully avoid using Xcode's fairly 
   - `react-native log-ios` / `react-native log-android` from terminal 
   - `Debug → Open System Log...` in the iOS Simulator
 
-## Optional add-ons to your React Native dev environment:
+## :boom: Optional add-ons to your React Native dev environment:
 
 ### Nuclide
 
@@ -161,7 +168,7 @@ and
 }
 ```
 
-## Two final points on why React Native is totally worth your time
+## :boom: Two final points on why React Native is totally worth your time
 - backed by facebook & already gained quite a bit of traction ---> won't die anytime soon
 - backed by facebook & already gained quite a bit of traction & is young ---> will definitely improve beyond belief in the near-future
 - it may just be the next big thing, and is in it's early stages (and you thought React was young!) ---> get in during the early stages & win big 
@@ -169,7 +176,7 @@ and
 
 
 
-## Recommended readings 
+## :boom: Recommended readings 
 
 - the definitive react-native intro course: `https://egghead.io/courses/react-native-fundamentals`
 - the official react-native docs (a little bit of rtfm goes a long way): `https://facebook.github.io/react-native/docs/getting-started.html`
