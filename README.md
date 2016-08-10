@@ -501,6 +501,8 @@ You have a few options here, all of which thankfully avoid using Xcode's fairly 
 
 ## :boom: Optional add-ons to your React Native dev environment:
 
+<img src="" height="350">
+
 ### Nuclide
 
 Nuclide is essentially a supercharged version of Atom, while still, at its simplest, being an Atom package. It was developed by Facebook, and they use it internally for all their react-native development. Suffice it to say, Nuclide is packed with useful features, and is highly recommended if you'll be doing a lot of react-native. Set it up by running 
@@ -572,6 +574,10 @@ and
 
 
 ## :boom: Recommended readings 
+
+<img src="https://raw.githubusercontent.com/ahsanazim/workshop/master/img/rtfm.png" height="250">
+
+*official source*: [http://www.urbandictionary.com/define.php?term=RTFM](http://www.urbandictionary.com/define.php?term=RTFM)
 
 On occassion, simply following the first commandment of technology ^ just isn't enough - one then feels the need to read the works of others who've read the manual better than you have. Experience and know-how goes a long way, and this is where the links below come in. They range from especially useful sections of the official docs, to catch-all tutorials by those who've contributed to the development of React Native. Enjoy:  
 
