@@ -25,7 +25,7 @@ Since this document is slightly long, here's a short run down on what you'll fin
 5. [Recommended Readings](#recommended-readings)
 
 
-Let's get started!
+Before you go any further, **fork and clone this repo** if you haven't already. With that out of the way, let's get started!
 
 ## :boom: Setting up the environment & basic init: 
 
