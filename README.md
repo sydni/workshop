@@ -9,7 +9,7 @@ Basically, this'll be your one-stop-shop to becoming an ace React Native develop
 
 Since this document is slightly long, here's a short run down on what you'll find inside: 
 
-1. [Setting up the environment & basic init](#boom-setting-up-the-environment-and-basic-init)
+1. [Setting up the environment & basic init](#boom-setting-up-the-environment-basic-init)
 2. [Building a React Native App](#boom-lets-build-a-react-native-app)
    - Hello World!
    - improving Hello World: Styling & other stuff!
@@ -27,7 +27,7 @@ Since this document is slightly long, here's a short run down on what you'll fin
 
 Before you go any further, **fork and clone this repo** if you haven't already. With that out of the way, let's get started!
 
-## :boom: Setting up the environment & basic init: 
+## :boom: Setting up the environment, basic init: 
 
 <img src="https://raw.githubusercontent.com/ahsanazim/workshop/master/img/installs.jpg" height="450">
 
