@@ -465,6 +465,11 @@ This is what our version was doing by this point:
 
 Note that the color changing to black upon clicking is an easy fix if you know the subtelties of `TouchableHighlight`. We won't go in to it now, but feel free to peruse the docs. 
 
+### moving on
+
+By now we've covered quite a few React Native concepts, and you have the skillset to code decently complex React Native apps - especially considering the background in React we all already have. From here on in, there are only a few minor improvements that you need to make to the app that appears in the gif at the top of this section. You've already learnt enough to get there! As mentioned before, the source code for said app is in the `./example/GoingNative` directory anyway.
+
+Although we could continue ploughing on and taking our app to ever-increasing levels of complexity, we felt it'd be better to move on and share some of the other things that we've learnt during out little sojourn into the world of React Native. Onwards!
 
 
 ## :boom: For future reference: 
