@@ -506,20 +506,20 @@ You have a few options here, all of which thankfully avoid using Xcode's fairly 
 Nuclide is essentially a supercharged version of Atom, while still, at its simplest, being an Atom package. It was developed by Facebook, and they use it internally for all their react-native development. Suffice it to say, Nuclide is packed with useful features, and is highly recommended if you'll be doing a lot of react-native. Set it up by running 
 `apm install nuclide`  from the command line. The next time you open `Atom`, you'll see everything you need! 
 
-link: `https://nuclide.io/`
+[follow this link for more info](https://nuclide.io/)
 
 ### Ignite / Snowflake / Pepperoni
 
 Each of Ignite, Snowflake, and Pepperoni are react-native starter kits. They all provide lots of add-ons to the usual react-native dev experience, and expedite several processes that would otherwise take a relatively large amount of legwork. Which one you use really depends on personal preference; there doesn't seem to be a consensus out there yet as to which is better. We'll leave you with links to each: 
 
-Ignite: `https://github.com/infinitered/ignite`
+[more on Ignite](https://github.com/infinitered/ignite)
 
-Snowflake: `https://github.com/bartonhammond/snowflake`
+[more on Snowflake](https://github.com/bartonhammond/snowflake)
 
-Pepperoni: `http://getpepperoni.com/`
+[more on Pepperoni](http://getpepperoni.com/)
 
 ### linting 
-Since we're used to a linter, why not go back to eslint? Setting it up is easy (`https://www.npmjs.com/package/eslint-plugin-react-native`)
+Since we're used to a linter, why not go back to eslint? Setting it up is easy, follow this [link](https://www.npmjs.com/package/eslint-plugin-react-native) or just go by the instructions below:
 
 First, run the following from terminal: 
 
@@ -573,8 +573,10 @@ and
 
 ## :boom: Recommended readings 
 
+On occassion, simply following the first commandment of technology ^ just isn't enough - one then feels the need to read the works of others who've read the manual better than you have. Experience and know-how goes a long way, and this is where the links below come in. They range from especially useful sections of the official docs, to catch-all tutorials by those who've contributed to the development of React Native. Enjoy:  
+
 - the definitive react-native intro course: [`https://egghead.io/courses/react-native-fundamentals`](https://egghead.io/courses/react-native-fundamentals)
-- the official react-native docs (a little bit of rtfm goes a long way): [`https://facebook.github.io/react-native/docs/getting-started.html`](https://facebook.github.io/react-native/docs/getting-started.html)
+- the official react-native docs: [`https://facebook.github.io/react-native/docs/getting-started.html`](https://facebook.github.io/react-native/docs/getting-started.html)
 - [`https://github.com/jondot/awesome-react-native`](https://github.com/jondot/awesome-react-native)
 - [`http://rickyreusser.com/2016/05/14/things-i-learned-the-hard-way-using-react-native/`](http://rickyreusser.com/2016/05/14/things-i-learned-the-hard-way-using-react-native/)
 - [`http://ruoyusun.com/2015/11/01/things-i-wish-i-were-told-about-react-native.html`](http://ruoyusun.com/2015/11/01/things-i-wish-i-were-told-about-react-native.html)
