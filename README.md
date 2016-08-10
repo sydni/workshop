@@ -469,6 +469,9 @@ Note that the color changing to black upon clicking is an easy fix if you know t
 
 ### a note on React Native workflow 
 
+<img src="https://raw.githubusercontent.com/ahsanazim/workshop/master/img/workflow.gif" height="450">
+*hot reloading increases dev speed ^*
+
 While most conventional iOS apps are developed exclusively through Xcode, and tested there as well, you'll probably want to take a different approach with react-native - unless, that is, you're in the truly infinitesimal minority that enjoys coding javascript in Xcode.
 
 As we've been programming using `Atom` for a while, it's best we stick with that for actually typing our application **code**. In the future you may want to take a look at Nuclide (https://nuclide.io/docs/platforms/react-native/), which is essentially " *Atom enhanced by Facebook for React development* ". We also have a bit on it in the optional add-ons section.
