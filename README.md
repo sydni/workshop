@@ -398,7 +398,7 @@ To do this, you'll have to make some changes to the `index.ios.js` file we'd bee
 ```javascript 
 import AnotherPage from './AnotherPage.js';
 ```
-Now you'll actually begin working on some navigation. Navigation in React Native (and hence `NavigatorIOS`) works on the principle of acting on a `navigator` object. The object is passed in as a prop to any component that is rendered by `NavigatorIOS`. You can then call the relevant methods to perform the navigation action you need. 
+Now you'll actually begin working on some navigation. Navigation in React Native (and hence `NavigatorIOS`) works on the principle of acting on a `navigator` object. The object is automatically passed in as a prop to any component that is rendered by `NavigatorIOS`. You can then call the relevant methods to perform the navigation action you need. 
 
 There are two types of navigation actions: `push`  (`this.props.navigator.push({ ...});`), and `pop` (`this.props.navigator.pop({ ...});`). You've probably figured out by now that there's a navigation stack which you push and pop on to, and that your current page is determined by what's currently on top of the stack. 
 
@@ -561,18 +561,18 @@ and
 
 ## :boom: Recommended readings 
 
-- the definitive react-native intro course: `https://egghead.io/courses/react-native-fundamentals`
-- the official react-native docs (a little bit of rtfm goes a long way): `https://facebook.github.io/react-native/docs/getting-started.html`
-- `https://github.com/jondot/awesome-react-native`
-- `http://rickyreusser.com/2016/05/14/things-i-learned-the-hard-way-using-react-native/`
-- `http://ruoyusun.com/2015/11/01/things-i-wish-i-were-told-about-react-native.html`
-- `https://medium.com/@ilanasufrin/tips-and-tricks-for-working-with-react-native-8ed6b6a82243#.60sd6norv`
-- `https://medium.com/the-react-native-log/tips-for-styling-your-react-native-apps-3f61608655eb#.a05iru4gz`
-- for hot reloading read the first answer's hot-reloading relevent portion from this link: `https://forums.meteor.com/t/what-is-hot-reloading-and-code-splitting-webpack-webpack-vs-ecmascript-hot/19734`
+- the definitive react-native intro course: [`https://egghead.io/courses/react-native-fundamentals`](https://egghead.io/courses/react-native-fundamentals)
+- the official react-native docs (a little bit of rtfm goes a long way): [`https://facebook.github.io/react-native/docs/getting-started.html`](https://facebook.github.io/react-native/docs/getting-started.html)
+- [`https://github.com/jondot/awesome-react-native`](https://github.com/jondot/awesome-react-native)
+- [`http://rickyreusser.com/2016/05/14/things-i-learned-the-hard-way-using-react-native/`](http://rickyreusser.com/2016/05/14/things-i-learned-the-hard-way-using-react-native/)
+- [`http://ruoyusun.com/2015/11/01/things-i-wish-i-were-told-about-react-native.html`](http://ruoyusun.com/2015/11/01/things-i-wish-i-were-told-about-react-native.html)
+- [`https://medium.com/@ilanasufrin/tips-and-tricks-for-working-with-react-native-8ed6b6a82243#.60sd6norv`](https://medium.com/@ilanasufrin/tips-and-tricks-for-working-with-react-native-8ed6b6a82243#.60sd6norv)
+- [`https://medium.com/the-react-native-log/tips-for-styling-your-react-native-apps-3f61608655eb#.a05iru4gz`](https://medium.com/the-react-native-log/tips-for-styling-your-react-native-apps-3f61608655eb#.a05iru4gz)
+- for hot reloading read the first answer's hot-reloading relevent portion from this link: [`https://forums.meteor.com/t/what-is-hot-reloading-and-code-splitting-webpack-webpack-vs-ecmascript-hot/19734`](https://forums.meteor.com/t/what-is-hot-reloading-and-code-splitting-webpack-webpack-vs-ecmascript-hot/19734)
 - navigation & routing: 
-    - `http://blog.paracode.com/2016/01/05/routing-and-navigation-in-react-native/`
-    - `https://medium.com/@dabit3/react-native-navigator-navigating-like-a-pro-in-react-native-3cb1b6dc1e30#.hviawj6r2`
-    - `https://facebook.github.io/react-native/docs/using-navigators.html`
-    - `https://facebook.github.io/react-native/docs/navigatorios.html`
+    - [`http://blog.paracode.com/2016/01/05/routing-and-navigation-in-react-native/`](http://blog.paracode.com/2016/01/05/routing-and-navigation-in-react-native/)
+    - [`https://medium.com/@dabit3/react-native-navigator-navigating-like-a-pro-in-react-native-3cb1b6dc1e30#.hviawj6r2`](https://medium.com/@dabit3/react-native-navigator-navigating-like-a-pro-in-react-native-3cb1b6dc1e30#.hviawj6r2)
+    - [`https://facebook.github.io/react-native/docs/using-navigators.html`](https://facebook.github.io/react-native/docs/using-navigators.html)
+    - [`https://facebook.github.io/react-native/docs/navigatorios.html`](https://facebook.github.io/react-native/docs/navigatorios.html)
 
 
