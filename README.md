@@ -457,6 +457,10 @@ Now, before we move on, you'll notice that we haven't bound the function yet - d
 
 Finally, finally, you have everything set up to navigate to your other component. Give your code a spin -- it should work now! 
 
+This is what our version was doing by this point: 
+
+![]()
+
 
 
 ## :boom: For future reference: 
