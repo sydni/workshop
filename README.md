@@ -22,7 +22,7 @@ Since this document is slightly long, here's a short run down on what you'll fin
    - upgrading Atom
    - need a starter kit?
 4. [Final note on why you should use React native](#boom-two-final-points-on-why-react-native-is-totally-worth-your-time)
-5. [Recommended Readings](#recommended-readings)
+5. [Recommended Readings](#boom-recommended-readings)
 
 
 Before you go any further, **fork and clone this repo** if you haven't already. With that out of the way, let's get started!
@@ -49,17 +49,17 @@ assuming you have `node`, `Xcode` (available from the App Store in case you don'
 
 4. `react-native init GoingNative` (this will take a minute; it creates a starter project called "GoingNative" in a directory named identically)
 
-Your directory tree should now look as follows (note that the - rather irrelevant -`img` directory is deliberately not shown in the below image): 
 
-![]()
-
-### run!
+### run :runner::dash:
 
 Now `cd` in to the `GoingNative` directory and type `react-native run-ios` in to the terminal to see a starter app/window run in an iOS simulator! Btw, it'll take a few seconds to open up for the first time - the simulator will stay on 'Loading from localhost:' for a bit.
 
 You'll also now see another terminal window titled `React Packager` open. It'll instruct you to keep it open while you're developing the app - please follow said advice!
 
 ## :boom: let's build a few React Native apps:
+
+<img src="https://raw.githubusercontent.com/ahsanazim/workshop/master/img/app.jpg" height="350">
+
 
 ### a bit of cleaning up
 
@@ -69,7 +69,7 @@ Once in Atom, go to the `index.ios.js` file; this is the js file that produced t
 
 If you do so, then your first impression of the code will probably be one of relief - it looks remarkably similar to the usual React we've been used to. As you now know, that's intentional, and pretty much the whole point of React Native! 
 
-Indeed, it's all there: the familiar `import` statements, `render` calls,`ES6 classes`, as well as the `JSX` we've been dealing with for quite a while. You have, though, probably noticed something that's familiar, but seemingly in the wrong place (`CSS` in the same file as `javascript`????? oh the horror :astonished: ).
+Indeed, it's all there: the familiar `import` statements, `render` calls,`ES6 classes`, as well as the `JSX` we've been dealing with for quite a while. You have, though, probably noticed something that's familiar, but seemingly in the wrong place (`CSS` in the same file as `javascript`????? oh the horror :speak_no_evil: ).
 
 Fear not, we'll get to that in a bit. First, though, :rotating_light: **clear the page**. We want a blank `index.ios.js` file to work off of. No cheating here ;)
 
@@ -566,16 +566,16 @@ and
 ```
 
 ## :boom: Two final points on why React Native is totally worth your time
-- backed by facebook & already gained quite a bit of traction ---> won't die anytime soon
-- backed by facebook & already gained quite a bit of traction & is young ---> will definitely improve beyond belief in the near-future
-- it may just be the next big thing, and is in it's early stages (and you thought React was young!) ---> get in during the early stages & win big 
+- backed by facebook & already gained quite a bit of traction :arrow_forward: won't die anytime soon
+- backed by facebook & already gained quite a bit of traction & is young :arrow_forward: will definitely improve beyond belief in the near-future
+- it may just be the next big thing, and is in it's early stages (and you thought React was young!) :arrow_forward: get in during the early stages & win big (i.e. :moneybag:)
 - in the unlikely event that it does all go up in flames, at least you've gotten a decent entry point to mobile app development. Keep in mind that many say Apple's swift looks remarkably similar to react-javascript ;)
 
 
 
 ## :boom: Recommended readings 
 
-<img src="https://raw.githubusercontent.com/ahsanazim/workshop/master/img/rtfm.png" height="250">
+<img src="https://raw.githubusercontent.com/ahsanazim/workshop/master/img/rtfm.png" height="300">
 
 *official source*: [http://www.urbandictionary.com/define.php?term=RTFM](http://www.urbandictionary.com/define.php?term=RTFM)
 
