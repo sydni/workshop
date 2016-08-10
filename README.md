@@ -9,8 +9,8 @@ Basically, this'll be your one-stop-shop to becoming an ace React Native develop
 
 Since this document is slightly long, here's a short run down on what you'll find inside: 
 
-1. [Setting up the environment & basic init](#boom-setting-up-the-environment-&-basic-init)
-2. [Building a few React Native Apps](#boom-lets-build-a-few-react-native-apps)
+1. [Setting up the environment & basic init](#boom-setting-up-the-environment-basic-init)
+2. [Building a React Native App](#boom-lets-build-a-react-native-app)
    - Hello World!
    - improving Hello World: Styling & other stuff!
    - improving Hello World: Navigation!
@@ -56,7 +56,7 @@ Now `cd` in to the `GoingNative` directory and type `react-native run-ios` in to
 
 You'll also now see another terminal window titled `React Packager` open. It'll instruct you to keep it open while you're developing the app - please follow said advice!
 
-## :boom: let's build a few React Native apps:
+## :boom: let's build a React Native apps:
 
 <img src="https://raw.githubusercontent.com/ahsanazim/workshop/master/img/app.jpg" height="350">
 
