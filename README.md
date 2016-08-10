@@ -29,6 +29,8 @@ Before you go any further, **fork and clone this repo** if you haven't already. 
 
 ## :boom: Setting up the environment & basic init: 
 
+<img src="https://raw.githubusercontent.com/ahsanazim/workshop/master/img/installs.jpg" height="450">
+
 ### overall requirements: 
 
 - Homebrew (needed to install `Watchman` below)
