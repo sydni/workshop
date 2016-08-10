@@ -459,7 +459,9 @@ Finally, finally, you have everything set up to navigate to your other component
 
 This is what our version was doing by this point: 
 
-![](https://raw.githubusercontent.com/ahsanazim/workshop/master/img/nav.gif)
+<img src="https://raw.githubusercontent.com/ahsanazim/workshop/master/img/nav.gif" height="350">
+
+Note that the color changing to black upon clicking is an easy fix if you know the subtelties of `TouchableHighlight`. We won't go in to it now, but feel free to peruse the docs. 
 
 
 
