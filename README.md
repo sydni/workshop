@@ -9,7 +9,7 @@ Basically, this'll be your one-stop-shop to becoming an ace React Native develop
 
 Since this document is slightly long, here's a short run down on what you'll find inside: 
 
-1. [Setting up the environment & basic init](#boom-setting-up-the-environment-basic-init)
+1. [Setting up the environment & basic init](#boom-setting-up-the-environment-&-basic-init)
 2. [Building a few React Native Apps](#boom-lets-build-a-few-react-native-apps)
    - Hello World!
    - improving Hello World: Styling & other stuff!
@@ -566,9 +566,9 @@ and
 ```
 
 ## :boom: Two final points on why React Native is totally worth your time
-- backed by facebook & already gained quite a bit of traction :arrow_forward: won't die anytime soon
-- backed by facebook & already gained quite a bit of traction & is young :arrow_forward: will definitely improve beyond belief in the near-future
-- it may just be the next big thing, and is in it's early stages (and you thought React was young!) :arrow_forward: get in during the early stages & win big (i.e. :moneybag:)
+- backed by facebook & already gained quite a bit of traction :arrow_right: won't die anytime soon
+- backed by facebook & already gained quite a bit of traction & is young :arrow_right: will definitely improve beyond belief in the near-future
+- it may just be the next big thing, and is in it's early stages (and you thought React was young!) :arrow_right: get in during the early stages & win big (i.e. :moneybag:)
 - in the unlikely event that it does all go up in flames, at least you've gotten a decent entry point to mobile app development. Keep in mind that many say Apple's swift looks remarkably similar to react-javascript ;)
 
 
