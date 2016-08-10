@@ -459,7 +459,7 @@ Finally, finally, you have everything set up to navigate to your other component
 
 This is what our version was doing by this point: 
 
-![]()
+![](https://raw.githubusercontent.com/ahsanazim/workshop/master/img/nav.gif)
 
 
 
