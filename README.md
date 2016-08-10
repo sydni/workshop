@@ -9,8 +9,8 @@ Basically, this'll be your one-stop-shop to becoming an ace React Native develop
 
 Since this document is slightly long, here's a short run down on what you'll find inside: 
 
-1. [Setting up the environment & basic init](#boom-setting-up-the-environment-basic-init)
-2. [Building a React Native App](#boom-lets-build-a-react-native-app)
+1. [Setting up the environment & basic init](#boom-setting-up-the-environment--basic-init)
+2. [Building a React Native App](#boom-building-a-react-native-app)
    - Hello World!
    - improving Hello World: Styling & other stuff!
    - improving Hello World: Navigation!
