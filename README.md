@@ -12,8 +12,8 @@ Since this document is slightly long, here's a short run down on what you'll fin
 1. [Setting up the environment & basic init](#boom-setting-up-the-environment-basic-init)
 2. [Building a few React Native Apps](#boom-lets-build-a-few-react-native-apps)
    - Hello World!
-   - Styling + improved Hello World!
-   - a not-that-simple app
+   - improving Hello World: Styling & other stuff!
+   - improving Hello World: Navigation!
 3. [For future reference](#boom-for-future-reference)
 	- workflow
 	- debugging
@@ -299,9 +299,9 @@ Pretty simple throughout ^ ! Do take note, though, of the 3rd and 4th `<Text>` c
 
 There's a lot more to styling, but this should be enough for you guys to extrapolate from. The main issue with styling really is just understanding where it goes, plus the use of native UI components in appropriate situations. We've covered both, so you should be in good stead! 
 
-### more imrpovements : navigation
+### more impovements : navigation
 
-Say we want to add navigation to our app - for that we'd bring out the `NavigatorIOS` component (this component is specific to iOS - there's a cross-platform `Navigator`, but we'll stick to `NavigatorIOS` for now).
+Say we want to add navigation to our app - for that we'd bring out the `NavigatorIOS` component (this component is specific to iOS - there's a cross-platform `Navigator`, but for reasons of ease and native-feel, we'll stick to `NavigatorIOS` for now).
 
 :rotating_light: As usual, import the component from `react-native`: 
 
@@ -353,42 +353,109 @@ Before we get it to navigate, we need something to navigate *to*.
 
 ```javascript 
 import React, { Component } from 'react';
-import { AppRegistry, Text, StyleSheet, NavigatorIOS } from 'react-native';
+import { AppRegistry, View, Text, StyleSheet, NavigatorIOS } from 'react-native';
 
 
 class AnotherPage extends Component {
   render() {
     return (
-      <Text style={styles.textContainer}>
-        This is some filler text to telling you that youve
-        navigated to another page.
-      </Text>
+      <View style={styles.viewContainer}>
+        <Text style={styles.text}>
+          This is some filler text to tell you that youve
+          navigated to another page.
+        </Text>
+      </View>
     );
   }
 }
 
-// note the flexbox!
 const styles = StyleSheet.create({
-  textContainer: {
+  viewContainer: {
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+    padding: 10,
+  },
+  text: {
     color: 'green',
+    fontSize: 40,
   },
 });
 
 
 export default AnotherPage
-
 ```
 
 Now you have to link this page to the HelloWorld page. There are a few ways to do this - you can make the familiar blue arrows on the nav bar, or make something else on the page clickable such that it takes you to another page.
 
 We'll do the latter, since it feels trivially cooler than the blue arrows ;) 
 
-To do this, you'll have to  
+To do this, you'll have to make some changes to the `index.ios.js` file we'd been working on throughout before this. 
+
+:rotating_light: Firstly, import the other js file you created:
+
+```javascript 
+import AnotherPage from './AnotherPage.js';
+```
+Now you'll actually begin working on some navigation. Navigation in React Native (and hence `NavigatorIOS`) works on the principle of acting on a `navigator` object. The object is passed in as a prop to any component that is rendered by `NavigatorIOS`. You can then call the relevant methods to perform the navigation action you need. 
+
+There are two types of navigation actions: `push`  (`this.props.navigator.push({ ...});`), and `pop` (`this.props.navigator.pop({ ...});`). You've probably figured out by now that there's a navigation stack which you push and pop on to, and that your current page is determined by what's currently on top of the stack. 
+
+Really, navigation with `NavigatorIOS` is just that simple. Now to turn that in to code!
+
+In our case, you'll firstly need something on your initial page that you can click on. For this, the [`TouchableHighlight`](https://facebook.github.io/react-native/docs/touchablehighlight.html) component is useful - it has nice configurations for on-screen touches. 
  
+:rotating_light: You'll import the component from react-native (adding it to the already-long list of such imports): 
+
+```javascript 
+import { AppRegistry, Text, View, StyleSheet, NavigatorIOS,  TouchableHighlight } from 'react-native';
+``` 
+
+:rotating_light: and then you'll put starting and ending `TouchableHighlight` tags - with any content inbetween - inside the render method of your `HelloWorld` class (since that's where you want to navigate *from*). Crucially, you'll also want to pass in a function pointer to the `onPress` prop ("*Called when the touch is released, but not if cancelled (e.g. by a scroll that steals the responder lock*" - [relevant API doc](https://facebook.github.io/react-native/docs/touchablewithoutfeedback.html#onpress)). We added a pointer to an `_onForward` function, since it handles when you - logically - want to go forward in your views. We set it up as follows:
+
+```javascript 
+// render method returns:
+  <View style={styles.viewContainer}>	
+ 
+ 	// everything else is the same as before  .. i.e. other <Text> components etc.
+ 
+ 	// added this:
+    <TouchableHighlight onPress={this._onForward}>
+      <Text style={styles.bigClear}>Tap me to load the next page</Text>
+    </TouchableHighlight>
+  </View>
+``` 
+
+Now about that `_onForward` function - first things first, it has an underscore at the start because that's convention in javascript for referring to functions that should be treated as a private part of the API. Since javascript doesn't support encapsulation out of the box, it's a pretty useful convention; it doesn't, though, cause the language to give any special meaning to a function with an `_` identifier. 
+
+More to the point of this tutorial, `_onForward`'s job is to call an action on the navigator prop, such that we're moved to the next page - i.e. our `AnotherPage` component. All of that means we should probably call `this.props.navigator.push({ ...});` from inside it. 
+
+The question now is, how do we tell `push` *what* we want to push to the top of the stack? For this, the `push` function mentioned previously takes a javascript object with `title` and `component` properties - similar to initial route. It'll be implemented similarly. 
+
+:rotating_light: We ended up with the following function:
+
+```javascript 
+  _onForward() {
+    this.props.navigator.push({
+      title: 'Here you have another page',
+      component: AnotherPage
+    });
+  }
+``` 
+
+Now, before we move on, you'll notice that we haven't bound the function yet - do that! For that, you'll need a constructor, right? Note that in this situation, the constructor takes in not only `props`, but also [`context`](https://facebook.github.io/react/docs/context.html) - currently an experimental feature, but something present in a lot of the example code we saw; it essentially helps in sending information down to a component. 
+
+:rotating_light: This is what our constructor looked like:
+
+```javascript 
+  constructor(props, context) {
+    super(props, context);
+    this._onForward = this._onForward.bind(this);
+  }
+``` 
+
+Finally, finally, you have everything set up to navigate to your other component. Give your code a spin -- it should work now! 
 
 
 
@@ -502,5 +569,10 @@ and
 - `https://medium.com/@ilanasufrin/tips-and-tricks-for-working-with-react-native-8ed6b6a82243#.60sd6norv`
 - `https://medium.com/the-react-native-log/tips-for-styling-your-react-native-apps-3f61608655eb#.a05iru4gz`
 - for hot reloading read the first answer's hot-reloading relevent portion from this link: `https://forums.meteor.com/t/what-is-hot-reloading-and-code-splitting-webpack-webpack-vs-ecmascript-hot/19734`
+- navigation & routing: 
+    - `http://blog.paracode.com/2016/01/05/routing-and-navigation-in-react-native/`
+    - `https://medium.com/@dabit3/react-native-navigator-navigating-like-a-pro-in-react-native-3cb1b6dc1e30#.hviawj6r2`
+    - `https://facebook.github.io/react-native/docs/using-navigators.html`
+    - `https://facebook.github.io/react-native/docs/navigatorios.html`
 
 
