@@ -501,7 +501,7 @@ You have a few options here, all of which thankfully avoid using Xcode's fairly 
 
 ## :boom: Optional add-ons to your React Native dev environment:
 
-<img src="" height="350">
+<img src="https://raw.githubusercontent.com/ahsanazim/workshop/master/img/addons.jpg" height="350">
 
 ### Nuclide
 
