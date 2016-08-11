@@ -476,7 +476,7 @@ Note that the color changing to black upon clicking is an easy fix if you know t
 
 ### moving on
 
-By now we've covered quite a few React Native concepts, and you have the skillset to code decently complex React Native apps - especially considering the background in React we all already have. From here on in, there are only a few minor improvements that you need to make to the app that appears in the gif at the top of this section. You've already learnt enough to get there! As mentioned before, the source code for said app is in the `./example/GoneNative` directory anyway.
+By now we've covered quite a few React Native concepts, and you have the skillset to code decently complex React Native apps - especially considering the background in React we all already have. From here on in, there are only a few minor improvements that you need to make get to the app that I demo-ed during the workshop. Just a bit of state, a `TouchableHighlight`, and you're set :)  You've already learnt enough to get there! As mentioned before, the source code for said app is in the `./example/GoneNative` directory anyway.
 
 Although we could continue ploughing on and taking our app to ever-increasing levels of complexity, we felt it'd be better to move on and share some of the other things that we've learnt during out little sojourn into the world of React Native. 
 
