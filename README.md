@@ -601,5 +601,7 @@ On occassion, simply following the first commandment of technology ^ just isn't 
     - [`https://medium.com/@dabit3/react-native-navigator-navigating-like-a-pro-in-react-native-3cb1b6dc1e30#.hviawj6r2`](https://medium.com/@dabit3/react-native-navigator-navigating-like-a-pro-in-react-native-3cb1b6dc1e30#.hviawj6r2)
     - [`https://facebook.github.io/react-native/docs/using-navigators.html`](https://facebook.github.io/react-native/docs/using-navigators.html)
     - [`https://facebook.github.io/react-native/docs/navigatorios.html`](https://facebook.github.io/react-native/docs/navigatorios.html)
+- [a great intro to react native talk](https://www.youtube.com/watch?v=KWEhFWm0SL8)
+- [Alexander Kotliarskyi's excellent *Under the Hood* talk ](https://www.youtube.com/watch?v=hDviGU-57lU)
 
 
