@@ -25,7 +25,16 @@ Since this document is slightly long, here's a short run down on what you'll fin
 5. [Recommended Readings](#boom-recommended-readings)
 
 
-Before you go any further, **fork and clone this repo** if you haven't already. With that out of the way, let's get started!
+Before you go any further, **fork and clone this repo** if you haven't already. 
+
+You'll see that the `workshop` directory you now have in your system has the following tree structure:
+
+<img src="https://raw.githubusercontent.com/ahsanazim/workshop/master/img/tree.png" height="150">
+
+The `README` and `img` directories you shouldn't really be concerned with - the `GoingNative` directory, though, is an example app that you'll be working towards making through this tutorial. 
+
+With that out of the way, let's get started!
+
 
 ## :boom: Setting up the environment, basic init: 
 
@@ -47,12 +56,12 @@ assuming you have `node`, `Xcode` (available from the App Store in case you don'
 
 3. `npm install -g react-native-cli` (performs a global install of the react native command line interface)
 
-4. `react-native init GoingNative` (this will take a minute; it creates a starter project called "GoingNative" in a directory named identically)
+4. `react-native init GoneNative` (this will take a minute; it creates a starter project called "GoneNative" in a directory named identically)
 
 
 ### run :runner::dash:
 
-Now `cd` in to the `GoingNative` directory and type `react-native run-ios` in to the terminal to see a starter app/window run in an iOS simulator! Btw, it'll take a few seconds to open up for the first time - the simulator will stay on 'Loading from localhost:' for a bit.
+Now `cd` in to the `GoneNative` directory and type `react-native run-ios` in to the terminal to see a starter app/window run in an iOS simulator! Btw, it'll take a few seconds to open up for the first time - the simulator will stay on 'Loading from localhost:' for a bit.
 
 You'll also now see another terminal window titled `React Packager` open. It'll instruct you to keep it open while you're developing the app - please follow said advice!
 
@@ -63,7 +72,7 @@ You'll also now see another terminal window titled `React Packager` open. It'll 
 
 ### a bit of cleaning up
 
-Before we begin coding up a few apps, let's firstly get rid of the default 'app' that the React Native folks have left in for us. Through the terminal,`cd` to the `GoingNative` directory, and type `Atom .`
+Before we begin coding up a few apps, let's firstly get rid of the default 'app' that the React Native folks have left in for us. Through the terminal,`cd` to the `GoneNative` directory, and type `Atom .`
 
 Once in Atom, go to the `index.ios.js` file; this is the js file that produced the page you saw when running `react-native run-ios` for the first time. Go ahead and take a peek - there's no harm in having a quick look at it :). 
 
@@ -89,18 +98,18 @@ import { AppRegistry, Text } from 'react-native';
 ```
 Now, if we were doing vanilla react, and all we wanted to display was a 'hello world' message, we'd probably put that in a render function inside a component, right? Same here. 
 
-Just create a class `GoingNative` that extends `Component` (familiar, is it not?), and put in the usual `render` call inside it. Same style and syntax as vanilla React.
+Just create a class `GoneNative` that extends `Component` (familiar, is it not?), and put in the usual `render` call inside it. Same style and syntax as vanilla React.
 
 You'll need to return something in the render, though, right? The text "Hello World!" would seem a like a good idea, but we need something to put it in - maybe a div? 
 
 Wrong. That won't work in React Native; instead, you'll wrap your `Hello World!` inside a starting (`<Text>`) and ending (`</Text>`) UI component called Text. This brings us to an aside on *Native UI Components* in general - they're best understood as native UI widgets, necessary and crucial in facilitating making stuff appear and interact on your page in proper ways. Clearly, the `<Text>` component is for displaying text. You have a corresponding `<Image>` component for images, and more complex ones for things such as maps (the`<MapView>` component!). Just as we'd been using components in our React code, think of these as analagous to them in React Native, except for the fact that they're *native* to it. 
 
-Btw, in case there's any confusion: you can define normal components in React Native as well, and import/export/use them just as we did in React. In fact, our `GoingNative` class is a component in itself, and can be used accordingly. The above was just to emphasise the use of native UI components in React Native.
+Btw, in case there's any confusion: you can define normal components in React Native as well, and import/export/use them just as we did in React. In fact, our `GoneNative` class is a component in itself, and can be used accordingly. The above was just to emphasise the use of native UI components in React Native.
 
 :rotating_light: With the above addition, your class hopefully ends up looking like this: 
 
 ```javascript
-class GoingNative extends Component {
+class GoneNative extends Component {
   render() {
     return (
       <Text>Hello world!</Text>
@@ -115,7 +124,7 @@ Fortunately, this kind of registration doesn't involve any bureacracy or paperwo
 :rotating_light: Like so: 
 
 ```javascript
-AppRegistry.registerComponent('GoingNative', () => GoingNative);
+AppRegistry.registerComponent('GoneNative', () => GoneNative);
 ```
 
 One think to keep in mind is that however large your app will be, you'll usually have only one `AppRegistry.registerComponent( ... )` call; its function is to designate the root of your app. A crucial bit of boilerplate! 
@@ -144,7 +153,7 @@ for
 import React, { Component } from 'react';
 import { AppRegistry, Text } from 'react-native';
 
-class GoingNative extends Component {
+class GoneNative extends Component {
   render() {
     return (
       <Text>{"\n"}Hello world!</Text>
@@ -152,10 +161,10 @@ class GoingNative extends Component {
   }
 }
 
-AppRegistry.registerComponent('GoingNative', () => GoingNative);
+AppRegistry.registerComponent('GoneNative', () => GoneNative);
 ```
 
-All we really did was create a `GoingNative` component and register it with our app. The component contains text, "Hello World!", and that's what appears on our screen.
+All we really did was create a `GoneNative` component and register it with our app. The component contains text, "Hello World!", and that's what appears on our screen.
 
 *that line was blatantly stolen from facebook's react-native page (it was just too good to pass up). Apologies to facebook.
 
@@ -315,7 +324,7 @@ To use it, we should take note that the `NavigatorIOS` component has an `initial
 
 A `route` object is simply a javascript object with `component` and `title` properties. `component` is the name of the component that should show up initially, and `title` will be the text that shows up in the navigation bar at the top of the screen. 
 
-Right now, let's simply keep our Hello World! messages as the initial route, and have our app show that on startup. This'll also be a nice oppurtunity to refactor a bit - move the `Hello World!` message and assorted text components to a separate class (in the same file for now), call it anything you like (except for `GoingNative`, of course - you're keeping that class). Then you empty out the `GoingNative` class, and all you'll have the render function return is a `<NavigatorIOS .. />` component with the appropriate prop values passed in. 
+Right now, let's simply keep our Hello World! messages as the initial route, and have our app show that on startup. This'll also be a nice oppurtunity to refactor a bit - move the `Hello World!` message and assorted text components to a separate class (in the same file for now), call it anything you like (except for `GoneNative`, of course - you're keeping that class). Then you empty out the `GoneNative` class, and all you'll have the render function return is a `<NavigatorIOS .. />` component with the appropriate prop values passed in. 
 
 Also, maybe add a bit of flexbox styling - this should be pretty straightforward by now.
 
@@ -323,7 +332,7 @@ Also, maybe add a bit of flexbox styling - this should be pretty straightforward
 
 ```javascript 
 
-// render function in GoingNative returns this now. Note mention of HelloWorld class. 
+// render function in GoneNative returns this now. Note mention of HelloWorld class. 
   <NavigatorIOS
     initialRoute={{
       component: HelloWorld,
@@ -351,7 +360,7 @@ That was cool, but it's really only the bare bones of navigation - all you have 
 
 Before we get it to navigate, we need something to navigate *to*. 
 
-:rotating_light: Create a new js file in the `GoingNative` directory, call it anything you like - we chose the highly creative `AnotherPage.js`. Create an identically named class inside it, with the appropriate imports, and some filler content. This should be straightforward. We ended up with this: 
+:rotating_light: Create a new js file in the `GoneNative` directory, call it anything you like - we chose the highly creative `AnotherPage.js`. Create an identically named class inside it, with the appropriate imports, and some filler content. This should be straightforward. We ended up with this: 
 
 ```javascript 
 import React, { Component } from 'react';
@@ -467,7 +476,7 @@ Note that the color changing to black upon clicking is an easy fix if you know t
 
 ### moving on
 
-By now we've covered quite a few React Native concepts, and you have the skillset to code decently complex React Native apps - especially considering the background in React we all already have. From here on in, there are only a few minor improvements that you need to make to the app that appears in the gif at the top of this section. You've already learnt enough to get there! As mentioned before, the source code for said app is in the `./example/GoingNative` directory anyway.
+By now we've covered quite a few React Native concepts, and you have the skillset to code decently complex React Native apps - especially considering the background in React we all already have. From here on in, there are only a few minor improvements that you need to make to the app that appears in the gif at the top of this section. You've already learnt enough to get there! As mentioned before, the source code for said app is in the `./example/GoneNative` directory anyway.
 
 Although we could continue ploughing on and taking our app to ever-increasing levels of complexity, we felt it'd be better to move on and share some of the other things that we've learnt during out little sojourn into the world of React Native. 
 
